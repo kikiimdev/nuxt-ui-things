@@ -19,7 +19,7 @@
         </slot>
       </div>
     </div>
-    <UiDivider class="my-5" />
+    <UiDivider class="my-0" />
   </template>
   
   <script lang="ts" setup>
