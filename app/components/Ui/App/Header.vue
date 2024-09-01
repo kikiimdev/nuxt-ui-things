@@ -1,6 +1,6 @@
 <template>
     <div
-      class="flex flex-col flex-wrap justify-between gap-5 px-4 py-5 md:flex-row md:items-center md:px-6"
+      class="flex flex-col flex-wrap justify-between gap-5 py-5 md:flex-row md:items-center"
     >
       <div class="flex items-center gap-5">
         <div>
