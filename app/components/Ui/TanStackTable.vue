@@ -73,7 +73,7 @@
           </div>
         </slot>
         <slot name="rowsPerPage" :table="table">
-          <div class="flex items-center space-x-2 whitespace-nowrap">
+          <div class="flex flex-wrap items-center space-x-2 whitespace-nowrap">
             <p class="hidden text-sm font-medium text-foreground md:inline-block">
               {{ rowsPerPageText }}
             </p>
