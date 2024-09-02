@@ -70,7 +70,7 @@
                         >
                             Cancel
                         </UiButton>
-                        <UiButton :loading @click="_handleSubmit">Save</UiButton>
+                        <UiButton :loading @click="handleSubmit">Save</UiButton>
                     </slot>
                 </UiDialogFooter>
             </template>
