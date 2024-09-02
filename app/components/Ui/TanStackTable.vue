@@ -63,7 +63,7 @@
       v-if="showPagination"
       class="my-6 flex flex-col justify-between gap-4 px-2 md:flex-row md:items-center"
     >
-      <div class="flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center justify-between gap-3">
         <slot name="rowsSelected" :table="table">
           <div v-if="showSelect" class="whitespace-nowrap text-sm text-muted-foreground">
             <span>
@@ -74,7 +74,7 @@
         </slot>
         <slot name="rowsPerPage" :table="table">
           <div class="flex items-center space-x-2 whitespace-nowrap">
-            <p class="hidden text-sm font-medium text-foreground md:inline-block">
+            <p class="hidden text-sm font-medium text-foreground lg:inline-block">
               {{ rowsPerPageText }}
             </p>
             <UiSelect v-model="pageSize">
