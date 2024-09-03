@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { UiButton } from '#build/components';
+
     const model = defineModel<boolean>({
         required: false
     })
@@ -42,11 +44,11 @@
             </UiAlertDialogDescription>
         </UiAlertDialogHeader>
         <UiAlertDialogFooter>
-          <UiAlertDialogCancel :disabled="loading" :text="cancelText" :variant="cancelVariant" @click="() => handleCancel?.() || (model = false)" />
-          <UiAlertDialogAction :loading="loading" :variant="submitVariant" @click="() => handleSubmit()">
+          <UiButton :disabled="loading" :text="cancelText" :variant="cancelVariant" @click="() => handleCancel?.() || (model = false)" />
+          <UiButton :loading="loading" :variant="submitVariant" @click="() => handleSubmit()">
             <Icon class="h-4 w-4 animate-spin" name="lucide:loader-2" />
             {{ submitText }}
-          </UiAlertDialogAction>
+          </UiButton>
         </UiAlertDialogFooter>
       </UiAlertDialogContent>
     </UiAlertDialog>
