@@ -44,7 +44,7 @@
             :key="row.id"
             :data-state="row.getIsSelected() ? 'selected' : ''"
             :class="rowClass"
-            @click.self="$emit('row:select', row.original as Row<T>['original'])"
+            @click.stop="$emit('row:select', row.original as Row<T>['original'])"
           >
             <UiTableCell v-for="cell in row.getVisibleCells()" :key="cell.id">
               <FlexRender :render="cell.column.columnDef.cell" :props="cell.getContext()" />
