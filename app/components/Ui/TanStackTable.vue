@@ -43,6 +43,7 @@
             v-for="row in table.getRowModel().rows"
             :key="row.id"
             :data-state="row.getIsSelected() ? 'selected' : ''"
+            @click="$emit('row:select', row.original as Row<T>['original'])"
           >
             <UiTableCell v-for="cell in row.getVisibleCells()" :key="cell.id">
               <FlexRender :render="cell.column.columnDef.cell" :props="cell.getContext()" />
@@ -169,7 +170,7 @@
     getSortedRowModel,
     useVueTable,
   } from "@tanstack/vue-table";
-  import type { ColumnDef, SortingState, Table } from "@tanstack/vue-table";
+  import type { ColumnDef, Row, SortingState, Table } from "@tanstack/vue-table";
 
   const props = withDefaults(
     defineProps<{
@@ -247,7 +248,8 @@
   }
 
   const emit = defineEmits<{
-    ready: [table: Table<T>];
+    ready: [table: Table<T>]
+    'row:select': [row: Row<T>['original']]
   }>();
 
   const localSorting = ref(props.sorting);
