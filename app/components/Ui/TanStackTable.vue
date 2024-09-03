@@ -53,7 +53,13 @@
             v-if="table.getRowModel().rows.length === 0"
             :colspan="table.getAllLeafColumns().length"
           >
-            <slot :table="table" name="empty"> No data available. </slot>
+            <slot :table="table" name="empty">
+              <!-- No data available. -->
+              <div class="flex w-full flex-col items-center justify-center gap-5 py-5">
+                  <Icon name="lucide:database" class="h-12 w-12 text-muted-foreground" />
+                  <span class="mt-2">No data available.</span>
+              </div>
+            </slot>
           </UiTableEmpty>
         </UiTableBody>
       </UiTable>
