@@ -45,7 +45,7 @@
         <UiAlertDialogFooter>
           <UiButton :disabled="loading" :text="cancelText" :variant="cancelVariant" @click="() => handleCancel?.() || (model = false)" />
           <UiButton :loading="loading" :variant="submitVariant" @click="() => handleSubmit()">
-            <Icon class="h-4 w-4 animate-spin" name="lucide:loader-2" />
+            <Icon v-show="loading" class="h-4 w-4 animate-spin" name="lucide:loader-2" />
             {{ submitText }}
           </UiButton>
         </UiAlertDialogFooter>
