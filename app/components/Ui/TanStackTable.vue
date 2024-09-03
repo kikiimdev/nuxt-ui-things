@@ -43,6 +43,7 @@
             v-for="row in table.getRowModel().rows"
             :key="row.id"
             :data-state="row.getIsSelected() ? 'selected' : ''"
+            :class="rowClass"
             @click="$emit('row:select', row.original as Row<T>['original'])"
           >
             <UiTableCell v-for="cell in row.getVisibleCells()" :key="cell.id">
@@ -186,6 +187,7 @@
       descIcon?: string;
       unsortedIcon?: string;
       class?: any;
+      rowClass?: any;
       showPagination?: boolean;
       rowsPerPageText?: string;
     }>(),
