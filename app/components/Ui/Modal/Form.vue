@@ -12,7 +12,7 @@
         {
             title: "Edit profile",
             description: "Make changes to your profile here. Click save when you're done.",
-            submitText: "Submit",
+            submitText: "Simpan",
             cancelText: "Batal"
         }
     )
@@ -28,17 +28,6 @@
             await props.handleCancel?.()
             modelValue.value = false
         } catch (err: any) {
-            throw err
-        }
-    }
-
-    const _handleSubmit = async () => {
-        try {
-            await props.handleSubmit?.()
-            modelValue.value = false
-        } catch (err: any) {
-            console.log({dialogErr: err});
-            
             throw err
         }
     }
@@ -68,9 +57,9 @@
                             class="mt-2 sm:mt-0"
                             :disabled="loading"
                         >
-                            Cancel
+                            {{ cancelText }}
                         </UiButton>
-                        <UiButton :loading @click="handleSubmit">Save</UiButton>
+                        <UiButton :loading @click="handleSubmit">{{ submitText }}</UiButton>
                     </slot>
                 </UiDialogFooter>
             </template>
