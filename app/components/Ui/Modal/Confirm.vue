@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { UiButton } from '#build/components';
 
     const model = defineModel<boolean>({
         required: false
