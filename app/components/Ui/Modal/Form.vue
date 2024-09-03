@@ -59,7 +59,10 @@
                         >
                             {{ cancelText }}
                         </UiButton>
-                        <UiButton :loading @click="handleSubmit">{{ submitText }}</UiButton>
+                        <UiButton :loading @click="handleSubmit">
+                            <Icon v-show="loading" class="h-4 w-4 animate-spin" name="lucide:loader-2" />
+                            {{ submitText }}
+                        </UiButton>
                     </slot>
                 </UiDialogFooter>
             </template>
